@@ -1,3 +1,5 @@
+package exercicios;
+
 import java.util.Scanner;
 
 public class doacao {
@@ -20,6 +22,6 @@ public class doacao {
             valorImposto = salarioAnual * terceiraFaixa;
             valorFaixa =3;
         }
-        System.out.printf("O valor do imposto foi  caiu na faixa %s" ,valorImposto );
+        System.out.printf("O valor do exercicios.imposto foi  caiu na faixa %s" ,valorImposto );
     }
 }

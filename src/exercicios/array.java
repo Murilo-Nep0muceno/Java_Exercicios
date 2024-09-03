@@ -1,4 +1,4 @@
-import java.awt.font.FontRenderContext;
+package exercicios;
 
 public class array {
     public static void main(String[] args){

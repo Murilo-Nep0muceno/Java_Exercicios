@@ -1,3 +1,5 @@
+package exercicios;
+
 public class aula_25 {
     public static void main(String[] args) {
         byte dia = 4;

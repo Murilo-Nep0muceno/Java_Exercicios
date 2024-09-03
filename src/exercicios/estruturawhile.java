@@ -1,3 +1,5 @@
+package exercicios;
+
 public class estruturawhile {
     public static void main(String[] args) {
        int [] idades = new int[3] ;

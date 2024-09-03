@@ -1,3 +1,5 @@
+package exercicios;
+
 import java.util.Scanner;
 
 public class DDD {
@@ -30,7 +32,7 @@ public class DDD {
                 System.out.println("Belo Horizonte");
                 break;
             default:
-                System.out.println("DDD nao cadastrado");
+                System.out.println("exercicios.DDD nao cadastrado");
                 break;
         }
     }

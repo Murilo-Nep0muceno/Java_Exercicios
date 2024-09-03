@@ -1,3 +1,5 @@
+package exercicios;
+
 public class arrayForeach {
     public static void main(String[] args) {
         int [] numeros = new int[3];

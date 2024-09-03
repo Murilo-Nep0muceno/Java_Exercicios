@@ -1,3 +1,5 @@
+package exercicios;
+
 import java.util.Scanner;
 public class baskara {
     public static void main(String[] args) {
