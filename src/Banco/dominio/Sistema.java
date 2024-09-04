@@ -10,6 +10,7 @@ public class Sistema {
         ContaPessoa conta = new ContaPessoa();
         ImprimirDados imprimi = new ImprimirDados();
         ValidaçãoDados validacao = new ValidaçãoDados();
+        FuncoesBanco fucoes = new FuncoesBanco();
 
         Scanner input = new Scanner(System.in);
         String apresentação = "\n--------Seja Bem Vindo-------- \n" +
@@ -17,7 +18,7 @@ public class Sistema {
                 "Escolha 1 Opção abaixo\n" +
                 "1- Cadastro  \n" +
                 "2- Login \n" +
-                "5- Sair do programa\n" +
+                "3- Sair do programa\n" +
                 "Digite a Opção: ";
 
 //        System.out.println(apresentação);
@@ -30,28 +31,54 @@ public class Sistema {
 
             switch (op) {
                 case 1:
-                    System.out.println("Opção Cadastro ");
-
-                    System.out.println("Numero da Conta");
-                    conta.numeroConta = input.nextInt();
-
-                    System.out.println("Nome Completo");
-                    conta.pessoa = input.next();
-
-                    System.out.println("Senha Cadastrada");
-                    conta.senha = input.nextInt();
-
-                    System.out.println("Cadastro Realizado" + conta.senha);
+                    fucoes.cadastroFuc();
                     break;
 
                 case 2:
                     System.out.println("Opção Login");
+
                     int numeroConta = input.nextInt();
                     String pessoa = input.next();
                     int senha = input.nextInt();
 
-                    if (validacao.nome(conta).equals(pessoa) && validacao.numeroConta(conta) == numeroConta && validacao.senha(conta) == senha) {
+                    fucoes.loginFuc(numeroConta,pessoa,senha);
+
+                    if (fucoes.loginFuc(numeroConta,pessoa,senha)) {
+
                         System.out.println("Acesso Permitido");
+                        fucoes.imprimirFuc();
+
+                        while (op != 4) {
+                            op = input.nextInt();
+
+                            switch (op) {
+
+                                case 1:
+                                    double retirar = input.nextDouble();
+
+                                    fucoes.sacarDinheiro(conta.saldo, retirar);
+                                    break;
+
+                                case 2:
+                                    System.out.println("Deposito dinheiro em conta: R$ " + conta.saldo);
+                                    conta.saldo += input.nextDouble();
+                                    System.out.println("Valor Depositado na sua conta: R$" + conta.saldo);
+                                    
+                                    break;
+
+                                case 3:
+
+
+                                    break;
+
+                                case 4:
+                                    System.out.println("Saindo Do Sistema");
+                                    break;
+
+                            }
+
+                        }
+
 
                     } else {
                         imprimi.imprimir(conta);
